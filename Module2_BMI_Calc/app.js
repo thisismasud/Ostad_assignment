@@ -1,6 +1,5 @@
 //Dom manipulation
 const calculateBtn = document.querySelector("#calculateBtn");
-const result = document.querySelector(".result");
 
 //Event listener
 calculateBtn.addEventListener("click", calculation)
@@ -10,15 +9,27 @@ function calculation(e){
     e.preventDefault();
 
     //getting all input field values.
-    let weightInput = document.querySelector("#weightInput").value;
-    let heightInput = document.querySelector("#heightInput").value;
+    let weight = document.querySelector("#weightInput").value;
+    let height = document.querySelector("#heightInput").value;
+    let result = document.querySelector(".result");
 
-    //converting height from inch to meter
-    let heightInMeter = heightInput * 0.0254;
+    if(weight == "" || isNaN(weight)){
+        result.innerHTML = "Please enter valid weight!";
+        result.style.display = "block";
+        result.style.color = "red"
+    }else if(height == "" || isNaN(height)){
+        result.innerHTML = "Please enter valid height!"
+        result.style.display = "block";
+        result.style.color = "red"
+    }else{
+        //converting height from inch to meter
+    let heightInMeter = height * 0.0254;
 
     //main formula
-    let bmi = weightInput / Math.pow(heightInMeter, 2)
+    let bmi = weight / Math.pow(heightInMeter, 2)
 
     result.innerHTML = `Your Body Mass Index (BMI) is: ${bmi.toFixed(2)}`;
     result.style.display = "block";
+    result.style.color = "black"
+    }
 }
