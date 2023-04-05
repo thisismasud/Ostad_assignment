@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital_clock_using_javascript</title>
+    <style>
+        body{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: consolas;
+            color: white;
+            font-size: 4rem;
+            height: 100vh;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock" onload="setInterval()"></div>
+
+    <script>
+        //Updating clock every 1 second
+        setInterval(digitalClock, 1000)
+
+        function digitalClock(){
+            //Selecting clock div
+            const clock = document.querySelector("#clock");
+
+            //creating date object
+            let date = new Date()
+            let currentHour = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds()
+            let session = "AM";
+            //
+            if(currentHour == 0){
+                currentHour = 12
+            }
+            if(currentHour > 12){
+                currentHour -= 12
+                session = "PM"
+            }
+            //Joining all neccessary variables
+            let time = `${currentHour} : ${minutes} : ${seconds} ${session}`;
+            //passing time to html clock div
+            clock.innerHTML = time;
+        }
+        
+
+    </script>
+</body>
+</html>
