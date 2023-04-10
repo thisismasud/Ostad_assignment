@@ -35,8 +35,8 @@
             let currentHour = date.getHours();
             let minutes = date.getMinutes();
             let seconds = date.getSeconds()
-            let session = "AM";
-            //
+            let session = "AM"; 
+            //hello how are 
             if(currentHour == 0){
                 currentHour = 12
             }
@@ -44,10 +44,11 @@
                 currentHour -= 12
                 session = "PM"
             }
-            //Joining all neccessary variables
+            //Joining all necessary variables
             let time = `${currentHour} : ${minutes} : ${seconds} ${session}`;
             //passing time to html clock div
             clock.innerHTML = time;
+            
         }
         
 

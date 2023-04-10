@@ -11,13 +11,13 @@ function calculation(e){
     //getting all input field values.
     let weight = document.querySelector("#weightInput").value;
     let height = document.querySelector("#heightInput").value;
-    let result = document.querySelector(".result");
+    let result = document.querySelector(".result")
 
-    if(weight == "" || isNaN(weight)){
+    if(weight === "" || isNaN(weight)){
         result.innerHTML = "Please enter valid weight!";
         result.style.display = "block";
         result.style.color = "red"
-    }else if(height == "" || isNaN(height)){
+    }else if(height === "" || isNaN(height)){
         result.innerHTML = "Please enter valid height!"
         result.style.display = "block";
         result.style.color = "red"
@@ -33,3 +33,4 @@ function calculation(e){
     result.style.color = "black"
     }
 }
+console.log("hello world")
