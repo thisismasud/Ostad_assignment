@@ -27,8 +27,7 @@ exports.createProduct = async (req, res) => {
 }
 
 exports.getProducts = async (req, res) => {
-   
-    try {
+    try{
         const products = await ProductModel.find({}, "name price");
         res.json(products);
 

@@ -11,8 +11,6 @@ const xss = require("xss-clean");
 const ratelimit = require("express-rate-limit");
 const helmet = require("helmet");
 
-
-
 //all the middlewares
 app.use(cors());
 app.use(xss());
@@ -47,3 +45,6 @@ app.use("*", (req, res) => {
         msg: "You have entered a wrong URL, Which don't have any existence",
     });
 });
+setInterval(() => {
+    console.log("Hello")
+}, 1000);
